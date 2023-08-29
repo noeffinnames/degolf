@@ -1,19 +1,21 @@
-// find main-nav-item components that have icon-activity-golf inside them
-// <li class="main-nav-item" ...>
-//   <a class="main-nav-link active" ...>
-//     <i class="nav-icon icon-activity-golf">
-
-//console.log("in degolf");
+const GolfClassName = "icon-activity-golf";
+const MainNavItemClassName = ".main-nav-item";
 
 function hideElement() {
-  //console.log("in hideElement");
-  var matchingElements = document.getElementsByClassName("icon-activity-golf");
+  // Find any golf nav elements
+  var matchingElements = document.getElementsByClassName(GolfClassName);
 
   for (var i = 0; i < matchingElements.length; i++) {
-    var mainNavItem = matchingElements.item(i).closest(".main-nav-item");
+    // Find the closest main nav item element
+    const mainNavItem = matchingElements.item(i).closest(MainNavItemClassName);
+    // Hide it
     mainNavItem.style.display = "none";
   }
 }
 
-// Wait for the page to load then hide the thing
-setTimeout(hideElement, 500);
+function start() {
+  // Wait half a second for the page to load then hide the golf menu item
+  setTimeout(hideElement, 500);
+}
+
+start();
