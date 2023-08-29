@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Degolf",
+  "version": "1.0",
+
+  "description": "Remove golf from Garmin connect",
+
+  "icons": {
+    "48": "icons/degolf-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://connect.garmin.com/*"],
+      "js": ["degolf.js"]
+    }
+  ]
+}
